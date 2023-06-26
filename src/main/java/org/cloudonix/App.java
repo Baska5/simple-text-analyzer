@@ -1,13 +1,14 @@
 package org.cloudonix;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Vertx;
+
+public class App extends AbstractVerticle {
+
+    public static void main(String[] args) {
+        Vertx vertx = Vertx.vertx();
+        ServiceVert v = new ServiceVert();
+        vertx.deployVerticle(v);
     }
+
 }
